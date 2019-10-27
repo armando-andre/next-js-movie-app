@@ -1,45 +1,52 @@
-import { useRouter } from 'next/router';
-import Markdown from 'react-markdown';
 import Layout from '../../components/MyLayout';
+import fetch from 'isomorphic-unfetch';
+import React from 'react';
 
-export default () => {
-  const router = useRouter();
-  return (
-    <Layout>
-      <h1>{router.query.id}</h1>
-      <div className="markdown">
-        <Markdown
-          source={`
-This is our blog post.
-Yes. We can have a [link](/link).
-And we can have a title as well.
+class Post extends React.Component {
+  render() {
 
-### This is a title
+    const rating = this.props.show.rating.average;
 
-And here's the content.
-      `}
-        />
-      </div>
-      <style jsx global>{`
-        .markdown {
-          font-family: 'Arial';
-        }
+    const nullRating = () => {
+      if(rating == null) {
+        return "Unknown"
+      } else {
+        return rating;
+      }
+    }
 
-        .markdown a {
-          text-decoration: none;
-          color: blue;
-        }
+    const genresObject = [this.props.show.genres];
+    const arrayLastValue = genresObject[0].slice(-1);
 
-        .markdown a:hover {
-          opacity: 0.6;
-        }
+    const genresIterator = genresObject[0].map(function(num) {
+      if(num != arrayLastValue[0]) {
+        return num + ', ';
+      } else {
+        return num;
+      }
+    });
 
-        .markdown h3 {
-          margin: 0;
-          padding: 0;
-          text-transform: uppercase;
-        }
-      `}</style>
-    </Layout>
-  );
+    return (
+      <Layout>
+        <h1>{this.props.show.name}</h1>
+        <img src={this.props.show.image.medium} />
+        <p><b>Rating:</b> {nullRating()}</p>
+        <p><b>Language:</b> {this.props.show.language}</p>
+        <p><b>Genres:</b> {genresIterator}</p>
+        <p><b>Description:</b> {this.props.show.summary.replace(/<[/]?[pb]>/g, '')}</p>
+      </Layout>
+    )
+  }
+}
+
+Post.getInitialProps = async function(context) {
+  const { id } = context.query;
+  const res = await fetch(`https://api.tvmaze.com/shows/${id}`);
+  const show = await res.json();
+
+  console.log(`Fetched show: ${show.name}`);
+
+  return { show };
 };
+
+// export default Post;

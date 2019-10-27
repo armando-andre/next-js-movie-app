@@ -12,6 +12,10 @@ const Header = () => (
     <Link href="/about">
       <a style={linkStyle}>About</a>
     </Link>
+    <form className="example" action="action_page.php">
+      <input type="text" placeholder="Search Movie or Show" name="search" />
+      <button type="submit">Submit</button>
+    </form>
   </div>
 );
 
