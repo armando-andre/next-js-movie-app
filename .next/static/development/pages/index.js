@@ -56,31 +56,7 @@ var Header = function Header() {
       lineNumber: 13
     },
     __self: this
-  }, "About")), __jsx("form", {
-    className: "example",
-    action: "action_page.php",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: this
-  }, __jsx("input", {
-    type: "text",
-    placeholder: "Search Movie or Show",
-    name: "search",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: this
-  }), __jsx("button", {
-    type: "submit",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: this
-  }, "Submit")));
+  }, "About")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -10450,8 +10426,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12__);
 
 
 
@@ -10464,13 +10442,9 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/armandocalderon/Documents/projects/react/next-js/next-js-tutorial/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
 
- // import Link from 'next/link';
 
- // const urlTitleFetch = async function() {
-//   const res = await fetch(`http://www.omdbapi.com/?t=joker&apikey=432e9351`);
-//   const data = await res.json();
-//   return { data };
-// };
+
+
 
 var ApiUserInput =
 /*#__PURE__*/
@@ -10486,55 +10460,59 @@ function (_React$Component) {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "handleChange", function (event) {
       _this.setState({
-        value: event.target.value
+        userInputSearchValue: event.target.value
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "handleSubmit", function (event) {
-      var userInput = _this.state.value;
-
-      var apiFetch =
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "handleSubmit",
+    /*#__PURE__*/
+    function () {
+      var _ref = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
       /*#__PURE__*/
-      function () {
-        var _ref = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
-        /*#__PURE__*/
-        _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-          var res, data;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-            while (1) {
-              switch (_context.prev = _context.next) {
-                case 0:
-                  _context.next = 2;
-                  return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default()("http://www.omdbapi.com/?t=".concat(userInput, "&apikey=432e9351"));
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(event) {
+        var res, data;
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.setState({
+                  data: []
+                });
 
-                case 2:
-                  res = _context.sent;
-                  _context.next = 5;
-                  return res.json();
+                event.preventDefault();
+                _context.next = 4;
+                return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12___default()("http://www.omdbapi.com/?s=".concat(_this.state.userInputSearchValue, "&apikey=432e9351"));
 
-                case 5:
-                  data = _context.sent;
-                  console.log(data);
+              case 4:
+                res = _context.sent;
+                _context.next = 7;
+                return res.json();
 
-                case 7:
-                case "end":
-                  return _context.stop();
-              }
+              case 7:
+                data = _context.sent;
+
+                _this.setState({
+                  data: data.Search
+                });
+
+                return _context.abrupt("return", data);
+
+              case 10:
+              case "end":
+                return _context.stop();
             }
-          }, _callee);
-        }));
+          }
+        }, _callee);
+      }));
 
-        return function apiFetch() {
-          return _ref.apply(this, arguments);
-        };
-      }();
-
-      apiFetch();
-      event.preventDefault();
-    });
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }());
 
     _this.state = {
-      value: ''
+      userInputSearchValue: '',
+      data: []
     };
     return _this;
   }
@@ -10542,26 +10520,38 @@ function (_React$Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(ApiUserInput, [{
     key: "render",
     value: function render() {
-      return __jsx("form", {
+      return __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33
+        },
+        __self: this
+      }, __jsx("form", {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 34
         },
         __self: this
       }, __jsx("label", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 35
         },
         __self: this
-      }, "Name:", __jsx("input", {
+      }, "Search For Your Favorite Movie or Show: ", __jsx("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36
+        },
+        __self: this
+      }), __jsx("input", {
         type: "text",
-        value: this.state.value,
+        value: this.state.userInputSearchValue,
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 37
         },
         __self: this
       })), __jsx("input", {
@@ -10569,10 +10559,43 @@ function (_React$Component) {
         value: "Submit",
         __source: {
           fileName: _jsxFileName,
+          lineNumber: 39
+        },
+        __self: this
+      })), __jsx("h1", {
+        __source: {
+          fileName: _jsxFileName,
           lineNumber: 42
         },
         __self: this
-      }));
+      }, "Title: ", this.state.userInputSearchValue.charAt(0).toUpperCase() + this.state.userInputSearchValue.slice(1)), __jsx("h2", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44
+        },
+        __self: this
+      }, "Content:", __jsx("ul", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
+        },
+        __self: this
+      }, this.state.data.map(function (show) {
+        return __jsx("li", {
+          key: show.imdbID,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 47
+          },
+          __self: this
+        }, console.log(show.imdbID), __jsx("a", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 50
+          },
+          __self: this
+        }, show.Title, ",\xA0(", show.Year.length == 4 ? show.Year : show.Year.slice(0, 4), ")"));
+      }))));
     }
   }]);
 

@@ -148,31 +148,7 @@ const Header = () => __jsx("div", {
     lineNumber: 13
   },
   __self: undefined
-}, "About")), __jsx("form", {
-  className: "example",
-  action: "action_page.php",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 15
-  },
-  __self: undefined
-}, __jsx("input", {
-  type: "text",
-  placeholder: "Search Movie or Show",
-  name: "search",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 16
-  },
-  __self: undefined
-}), __jsx("button", {
-  type: "submit",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 17
-  },
-  __self: undefined
-}, "Submit")));
+}, "About")));
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
 
@@ -1958,19 +1934,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__);
 
 var _jsxFileName = "/Users/armandocalderon/Documents/projects/react/next-js/next-js-tutorial/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
- // import Link from 'next/link';
 
- // const urlTitleFetch = async function() {
-//   const res = await fetch(`http://www.omdbapi.com/?t=joker&apikey=432e9351`);
-//   const data = await res.json();
-//   return { data };
-// };
+
+
 
 class ApiUserInput extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
   constructor(props) {
@@ -1978,49 +1952,62 @@ class ApiUserInput extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Componen
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleChange", event => {
       this.setState({
-        value: event.target.value
+        userInputSearchValue: event.target.value
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleSubmit", event => {
-      const userInput = this.state.value;
-
-      const apiFetch = async function () {
-        const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3___default()(`http://www.omdbapi.com/?t=${userInput}&apikey=432e9351`);
-        const data = await res.json();
-        console.log(data);
-      };
-
-      apiFetch();
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleSubmit", async event => {
+      this.setState({
+        data: []
+      });
       event.preventDefault();
+      let res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4___default()(`http://www.omdbapi.com/?s=${this.state.userInputSearchValue}&apikey=432e9351`);
+      let data = await res.json();
+      this.setState({
+        data: data.Search
+      });
+      return data;
     });
 
     this.state = {
-      value: ''
+      userInputSearchValue: '',
+      data: []
     };
   }
 
   render() {
-    return __jsx("form", {
+    return __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33
+      },
+      __self: this
+    }, __jsx("form", {
       onSubmit: this.handleSubmit,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 34
       },
       __self: this
     }, __jsx("label", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 35
       },
       __self: this
-    }, "Name:", __jsx("input", {
+    }, "Search For Your Favorite Movie or Show: ", __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36
+      },
+      __self: this
+    }), __jsx("input", {
       type: "text",
-      value: this.state.value,
+      value: this.state.userInputSearchValue,
       onChange: this.handleChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 37
       },
       __self: this
     })), __jsx("input", {
@@ -2028,10 +2015,41 @@ class ApiUserInput extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Componen
       value: "Submit",
       __source: {
         fileName: _jsxFileName,
+        lineNumber: 39
+      },
+      __self: this
+    })), __jsx("h1", {
+      __source: {
+        fileName: _jsxFileName,
         lineNumber: 42
       },
       __self: this
-    }));
+    }, "Title: ", this.state.userInputSearchValue.charAt(0).toUpperCase() + this.state.userInputSearchValue.slice(1)), __jsx("h2", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 44
+      },
+      __self: this
+    }, "Content:", __jsx("ul", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45
+      },
+      __self: this
+    }, this.state.data.map(show => __jsx("li", {
+      key: show.imdbID,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: this
+    }, console.log(show.imdbID), __jsx("a", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 50
+      },
+      __self: this
+    }, show.Title, ",\xA0(", show.Year.length == 4 ? show.Year : show.Year.slice(0, 4), ")"))))));
   }
 
 }
