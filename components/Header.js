@@ -1,18 +1,31 @@
+import React from 'react';
+
 import Link from 'next/link';
 
-const linkStyle = {
-  marginRight: 15
+const header = {
+  display: 'flex',
+  justifyContent: 'space-between'
 };
 
-const Header = () => (
-  <div>
-    <Link href="/">
-      <a style={linkStyle}>Home</a>
+const Cart = () => {
+  return (
+    <Link href="/cart">
+      <a>Cart: Number</a>
     </Link>
-    <Link href="/about">
-      <a style={linkStyle}>About</a>
-    </Link>
-  </div>
-);
+  )
+}
+
+class Header extends React.Component {
+  render() {
+    return (
+      <div style={header}>
+        <Link href="/">
+          <a> Home</a>
+        </Link>
+        <Cart/>
+      </div>
+    )
+  }
+}
 
 export default Header;
