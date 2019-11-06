@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Link from 'next/link';
 
 const header = {
@@ -10,7 +8,7 @@ const header = {
 const Cart = () => {
   return (
     <Link href="/cart">
-      <a>Cart: Number</a>
+      <a>Cart</a>
     </Link>
   )
 }

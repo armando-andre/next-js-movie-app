@@ -11,7 +11,7 @@ const Post = (props) => {
     event.preventDefault();
 
     cartItems.push(props.show);
-    console.log(cartItems)
+    sessionStorage.setItem(props.show.Title, props.show.imdbID)
   }
 
   return (
@@ -29,7 +29,7 @@ const Post = (props) => {
       <p><b>Rating:</b> {props.show.imdbRating}</p>
 
       <form onSubmit={addToCartFunction}>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Add To Cart" />
       </form>
     </Layout>
   )

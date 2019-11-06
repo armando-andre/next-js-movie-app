@@ -24,8 +24,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Users/armandocalderon/Documents/projects/react/next-js/next-js-tutorial/components/Header.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
+var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 var header = {
   display: 'flex',
@@ -37,16 +37,16 @@ var Cart = function Cart() {
     href: "/cart",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 10
     },
     __self: this
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 11
     },
     __self: this
-  }, "Cart: Number"));
+  }, "Cart"));
 };
 
 var Header =
@@ -67,26 +67,26 @@ function (_React$Component) {
         style: header,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 19
         },
         __self: this
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 20
         },
         __self: this
       }, __jsx("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 21
         },
         __self: this
       }, " Home")), __jsx(Cart, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 23
         },
         __self: this
       }));
@@ -10679,7 +10679,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!**************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Farmandocalderon%2FDocuments%2Fprojects%2Freact%2Fnext-js%2Fnext-js-tutorial%2Fpages%2Findex.js ***!
   \**************************************************************************************************************************************************************************/
@@ -10702,5 +10702,5 @@ module.exports = dll_129a35c7ec57967eb265;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

@@ -22,19 +22,19 @@ class ApiUserInput extends React.Component {
   }
 
   handleChange = (event) => {
-    this.setState({userInputSearchValue: event.target.value});
+    this.setState({userInputSearchValue: event.target.value})
   }
 
-  handleSubmit = async (event) => {  
+  handleSubmit = async (event) => {
     event.preventDefault();
-  
+
     this.setState({ data: [] })
     
     let res = await fetch(`http://www.omdbapi.com/?s=${this.state.userInputSearchValue}&apikey=432e9351`);
     let data = await res.json();
 
     this.setState({ data: data.Search })
- 
+  
     return data;
   }
 

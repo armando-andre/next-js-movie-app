@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -107,8 +107,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 var _jsxFileName = "/Users/armandocalderon/Documents/projects/react/next-js/next-js-tutorial/components/Header.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const header = {
   display: 'flex',
@@ -120,16 +120,16 @@ const Cart = () => {
     href: "/cart",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 10
     },
     __self: undefined
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 11
     },
     __self: undefined
-  }, "Cart: Number"));
+  }, "Cart"));
 };
 
 class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
@@ -138,26 +138,26 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       style: header,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 19
       },
       __self: this
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
       href: "/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 20
       },
       __self: this
     }, __jsx("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 21
       },
       __self: this
     }, " Home")), __jsx(Cart, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 23
       },
       __self: this
     }));
@@ -166,23 +166,6 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
-
-/***/ }),
-
-/***/ "./components/MovieCartContext.js":
-/*!****************************************!*\
-  !*** ./components/MovieCartContext.js ***!
-  \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-const MoviesCartContenxt = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
-/* harmony default export */ __webpack_exports__["default"] = (MoviesCartContenxt);
 
 /***/ }),
 
@@ -1934,86 +1917,71 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
-/* harmony import */ var _components_MovieCartContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/MovieCartContext */ "./components/MovieCartContext.js");
+/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
 var _jsxFileName = "/Users/armandocalderon/Documents/projects/react/next-js/next-js-tutorial/pages/cart.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+const Cart = () => {
+  let algo = [];
 
-
-
-const Cart = props => {
-  const {
-    cartItems
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_components_MovieCartContext__WEBPACK_IMPORTED_MODULE_3__["default"]);
-
-  const sameIdErrorHandler = () => {
-    try {} catch (error) {}
+  const unableSessionStorageUssage = () => {
+    if (false) { var i; }
   };
 
-  return __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  unableSessionStorageUssage();
+  return __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 17
     },
     __self: undefined
   }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 18
     },
     __self: undefined
   }, "Welcome to the cart page"), __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 19
     },
     __self: undefined
   }, "List:"), __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 21
     },
     __self: undefined
   }, __jsx("ul", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 22
     },
     __self: undefined
-  }, cartItems.map(show => __jsx("li", {
-    key: show.imdbID,
+  }, algo.map(show => __jsx("li", {
+    key: show,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/p/[id]",
-    as: `/p/${show.imdbID}`,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 24
     },
     __self: undefined
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 25
     },
     __self: undefined
-  }, `${show.Title}, (${show.Year})`)))))));
+  }, show))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Cart);
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!*****************************!*\
   !*** multi ./pages/cart.js ***!
   \*****************************/

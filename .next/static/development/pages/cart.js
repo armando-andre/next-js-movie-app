@@ -24,8 +24,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Users/armandocalderon/Documents/projects/react/next-js/next-js-tutorial/components/Header.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
+var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 var header = {
   display: 'flex',
@@ -37,16 +37,16 @@ var Cart = function Cart() {
     href: "/cart",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 10
     },
     __self: this
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 11
     },
     __self: this
-  }, "Cart: Number"));
+  }, "Cart"));
 };
 
 var Header =
@@ -67,26 +67,26 @@ function (_React$Component) {
         style: header,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 19
         },
         __self: this
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 20
         },
         __self: this
       }, __jsx("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 21
         },
         __self: this
       }, " Home")), __jsx(Cart, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 23
         },
         __self: this
       }));
@@ -97,23 +97,6 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
-
-/***/ }),
-
-/***/ "./components/MovieCartContext.js":
-/*!****************************************!*\
-  !*** ./components/MovieCartContext.js ***!
-  \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-var MoviesCartContenxt = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
-/* harmony default export */ __webpack_exports__["default"] = (MoviesCartContenxt);
 
 /***/ }),
 
@@ -10360,79 +10343,69 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
-/* harmony import */ var _components_MovieCartContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/MovieCartContext */ "./components/MovieCartContext.js");
+/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
 var _jsxFileName = "/Users/armandocalderon/Documents/projects/react/next-js/next-js-tutorial/pages/cart.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+var Cart = function Cart() {
+  var algo = [];
 
-
-
-var Cart = function Cart(props) {
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_components_MovieCartContext__WEBPACK_IMPORTED_MODULE_3__["default"]),
-      cartItems = _useContext.cartItems;
-
-  var sameIdErrorHandler = function sameIdErrorHandler() {
-    try {} catch (error) {}
+  var unableSessionStorageUssage = function unableSessionStorageUssage() {
+    if (true) {
+      for (var i = 0; i < sessionStorage.length; i++) {
+        algo[i] = sessionStorage.key(i);
+      }
+    }
   };
 
-  return __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  unableSessionStorageUssage();
+  return __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 17
     },
     __self: this
   }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 18
     },
     __self: this
   }, "Welcome to the cart page"), __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 19
     },
     __self: this
   }, "List:"), __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 21
     },
     __self: this
   }, __jsx("ul", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 22
     },
     __self: this
-  }, cartItems.map(function (show) {
+  }, algo.map(function (show) {
     return __jsx("li", {
-      key: show.imdbID,
+      key: show,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
-      },
-      __self: this
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: "/p/[id]",
-      as: "/p/".concat(show.imdbID),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 24
       },
       __self: this
     }, __jsx("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 25
       },
       __self: this
-    }, "".concat(show.Title, ", (").concat(show.Year, ")"))));
+    }, show));
   }))));
 };
 
@@ -10440,7 +10413,7 @@ var Cart = function Cart(props) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*****************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fcart&absolutePagePath=%2FUsers%2Farmandocalderon%2FDocuments%2Fprojects%2Freact%2Fnext-js%2Fnext-js-tutorial%2Fpages%2Fcart.js ***!
   \*****************************************************************************************************************************************************************************/
@@ -10463,5 +10436,5 @@ module.exports = dll_129a35c7ec57967eb265;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=cart.js.map

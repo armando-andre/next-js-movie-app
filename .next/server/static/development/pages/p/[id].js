@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -107,8 +107,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 var _jsxFileName = "/Users/armandocalderon/Documents/projects/react/next-js/next-js-tutorial/components/Header.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const header = {
   display: 'flex',
@@ -120,16 +120,16 @@ const Cart = () => {
     href: "/cart",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 10
     },
     __self: undefined
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 11
     },
     __self: undefined
-  }, "Cart: Number"));
+  }, "Cart"));
 };
 
 class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
@@ -138,26 +138,26 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       style: header,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 19
       },
       __self: this
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
       href: "/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 20
       },
       __self: this
     }, __jsx("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 21
       },
       __self: this
     }, " Home")), __jsx(Cart, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 23
       },
       __self: this
     }));
@@ -1954,7 +1954,7 @@ const Post = props => {
   const addToCartFunction = event => {
     event.preventDefault();
     cartItems.push(props.show);
-    console.log(cartItems);
+    sessionStorage.setItem(props.show.Title, props.show.imdbID);
   };
 
   return __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2093,7 +2093,7 @@ const Post = props => {
     __self: undefined
   }, __jsx("input", {
     type: "submit",
-    value: "Submit",
+    value: "Add To Cart",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 32
@@ -2117,7 +2117,7 @@ Post.getInitialProps = async function (context) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!*******************************!*\
   !*** multi ./pages/p/[id].js ***!
   \*******************************/

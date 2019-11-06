@@ -1,21 +1,18 @@
-import { useContext } from 'react';
-import Link from 'next/link';
-
 import Layout from '../components/MyLayout';
-import UserContext from '../components/MovieCartContext';
 
+const Cart = () => {
+  let algo = []
 
-const Cart = (props) => {
-  const { cartItems } = useContext(UserContext);
-
-  const sameIdErrorHandler = () => {
-    try {
-      
-    } catch (error) {
-      
-    }
+  const unableSessionStorageUssage = () => {
+    if (typeof window !== 'undefined') {
+      for (var i = 0; i < sessionStorage.length; i++) {
+        algo[i] = sessionStorage.key(i)
+      }
+    } 
   }
 
+  unableSessionStorageUssage()
+  
   return(
     <Layout>
       <h1>Welcome to the cart page</h1>
@@ -23,11 +20,9 @@ const Cart = (props) => {
       
       <h3>
         <ul>
-          {cartItems.map(show => (
-            <li key={show.imdbID}>
-              <Link href="/p/[id]" as={`/p/${show.imdbID}`}>
-                <a>{`${show.Title}, (${show.Year})`}</a>
-              </Link>
+          {algo.map(show => (
+            <li key={show}>
+              <a>{show}</a>
             </li>
           ))}
         </ul>
